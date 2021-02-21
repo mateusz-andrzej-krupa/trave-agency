@@ -10,6 +10,10 @@ import TripListOptions from '../../features/TripListOptions/TripListOptionsConta
 
 const Trips = ({trips}) => (
   <Section>
+    {/* {console.log('trips', trips)}
+    {trips.filter(trip => {
+        
+    })} */}
     <Grid>
       <Row>
         <Col xs={12}>
