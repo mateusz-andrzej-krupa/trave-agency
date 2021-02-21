@@ -1,7 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import {BrowserRouter, Route} from 'react-router-dom';
 import PropTypes from 'prop-types';
+import {AnimatedSwitch} from 'react-router-transition';
 
 import MainLayout from './components/layout/MainLayout/MainLayout';
 
@@ -16,6 +17,7 @@ import NotFound from './components/views/NotFound/NotFound';
 
 import parseTrips from './utils/parseTrips';
 import {setMultipleStates} from './redux/globalRedux';
+
 
 class App extends React.Component {
   static propTypes = {
@@ -36,11 +38,17 @@ class App extends React.Component {
     }
   }
 
+
   render(){
     return (
       <BrowserRouter>
         <MainLayout>
-          <Switch location={location}>
+          <AnimatedSwitch 
+            location={location}
+            atEnter={{ opacity: 0, marginTop: +20 }}
+            atLeave={{ opacity: 0, marginTop: +20 }}
+            atActive={{ opacity: 1, marginTop: 0 }}            
+          >
             <Route exact path='/' component={Home} />
             <Route exact path='/trips' component={Trips} />
             <Route exact path='/countries' component={Countries} />
@@ -49,7 +57,7 @@ class App extends React.Component {
             <Route exact path='/trip/:id' component={Trip} />
             <Route exact path='/country/:id' component={Country} />
             <Route path='*' component={NotFound} />
-          </Switch>
+          </AnimatedSwitch>
         </MainLayout>
       </BrowserRouter>
     );
