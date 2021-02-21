@@ -12,6 +12,13 @@ export const getFilteredTrips = ({trips, filters}) => {
   }
 
   // TODO - filter by duration
+  if (filters.duration > 0) {
+    const minDuration = filters.duration.from;
+    const maxDuration = filters.duration.to;
+
+    output = output.filter(trip => 
+      trip.days >= minDuration && trip.days <= maxDuration);
+  } 
 
   // TODO - filter by tags
   if (filters.tags.length > 0) {
@@ -28,7 +35,6 @@ export const getTripById = ({trips}, tripId) => {
   const filtered = trips.filter(trip => trip.id == tripId);
 
   // TODO - filter trips by tripId
-
   console.log('filtering trips by tripId:', tripId, filtered);
   return filtered.length ? filtered[0] : {error: true};
 };
