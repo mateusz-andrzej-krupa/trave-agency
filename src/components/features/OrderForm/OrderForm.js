@@ -2,20 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import {Grid, Row, Col} from 'react-flexbox-grid';
-import OrderSummary from '../TripSummary/TripSummary';
+import OrderSummary from '../OrderSummary/OrderSummary';
 
-const OrderForm = ({cost}) => (
+const OrderForm = ({tripCost, options}) => (
   <Grid>
+    {/* {console.log('props', tripCost)} */}
     <Row>
       <Col xs={12}>
-        <OrderSummary cost={cost} />
+        {/* <div>{'Total price:'} {tripCost} </div> */}
+        <OrderSummary tripprice={tripCost} options={options} /> 
+        {/* cost={tripCost}> {'cena wycieczki'} {tripCost}</OrderSummary */}
       </Col>
     </Row>
   </Grid>
 );
 
 OrderForm.propTypes = {
-  cost: PropTypes.arrayOf(PropTypes.string),
+  tripCost: PropTypes.string,
+  options: PropTypes.object,
 };
   
 export default OrderForm;
