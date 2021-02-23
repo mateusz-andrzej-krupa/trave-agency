@@ -15,7 +15,7 @@ const OrderOptionDate = ({ currentValue, name, setOptionValue }) => (
       selected={currentValue}
       onChange={date => setOptionValue(date)}
       name={name}
-      placeholderText={'your start date'} />
+      placeholderText={'begin trip date'} />
 
   </div>
 );
@@ -27,6 +27,5 @@ OrderOptionDate.propTypes = {
   startDate: PropTypes.string,
   setStartDate: PropTypes.string,
 };
-
 
 export default OrderOptionDate;
