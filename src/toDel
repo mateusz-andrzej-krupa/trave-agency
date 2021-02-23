@@ -16,10 +16,11 @@ const colors = [
 ];
 
 // rozwiązanie1:
-const [first, second, third, ...others] = colors;
+//const [first, second, third, ...others] = colors;
 
 // rozwiązanie2:
-const [first, second, third] = colors; const [,,, ...others] = colors;
+const [first, second, third] = colors; 
+const [,,, ...others] = colors;
 
 //sprawedzenie:
 console.log('new colors', colors);
@@ -28,3 +29,6 @@ console.log('others', others);
 // pytania:
 // 1. Dlaczego other ma w sobie tylko piersze trzy el pierwotnej tablicy colors?
 // 2. Dlaczego tablica colors jest identyczna z pierwotną=nie została zmieniona?
+
+//rozwiaznie:
+console.log(`first: ${first}, second: ${second}, third: ${third}`);
