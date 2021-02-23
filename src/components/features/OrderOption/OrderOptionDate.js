@@ -3,25 +3,30 @@ import PropTypes from 'prop-types';
 
 import styles from './OrderOption.scss';
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
+import DatePicker from 'react-datepicker';
 
-const OrderOptionText = ({currentValue, name, setOptionValue}) => (
+
+const OrderOptionDate = ({ currentValue, name, setOptionValue }) => (
 
   <div className={styles.component}>
-    <input type="text"
+    <DatePicker
+      type="date"
       className={styles.input}
-      value={currentValue}
-      onChange={(event) => setOptionValue(event.currentTarget.value)}
-      name= {name} 
-      placeholder={'write here'}
-    />
+      selected={currentValue}
+      onChange={date => setOptionValue(date)}
+      name={name}
+      placeholderText={'your start date'} />
 
   </div>
 );
 
-OrderOptionText.propTypes = {
+OrderOptionDate.propTypes = {
   name: PropTypes.string,
   currentValue: PropTypes.string,
   setOptionValue: PropTypes.func,
+  startDate: PropTypes.string,
+  setStartDate: PropTypes.string,
 };
 
-export default OrderOptionText;
+
+export default OrderOptionDate;
