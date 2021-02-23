@@ -1,0 +1,12 @@
+const colors = [
+  'red',
+  'green',
+  'blue',
+  'white',
+  'black',
+  'purple',
+];
+const [first, second, third] = colors; const [,,, ...others] = colors;
+
+console.log('new colors', colors);
+console.log('others', others);

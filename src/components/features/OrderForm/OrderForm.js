@@ -8,7 +8,6 @@ import pricing from '../../../data/pricing.json';
 
 const OrderForm = ({tripCost, options, setOrderOption }) => (
   <Grid>
-    {console.log('props', options)}
     <Row>
       {pricing.map((option) => (
         <Col md={4} key={option.id}>

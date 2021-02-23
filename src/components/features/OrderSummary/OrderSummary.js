@@ -9,7 +9,6 @@ import {formatPrice} from '../../../utils/formatPrice';
 
 const OrderSummary = ({tripprice, options}) => (
   <Grid>
-    {console.log('summary', options)}
     <h2 className={styles.component}> Total: <strong> { formatPrice(calculateTotal(tripprice, options)) } </strong> </h2>
   </Grid>
 );
