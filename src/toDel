@@ -1,3 +1,9 @@
+// zadanie 18.5
+// Chcemy zapisać te nazwy w osobnych zmiennych, 
+// tak aby pierwsze trzy były zapisane w zmiennych/stałych 
+// o nazwach: first, second i third, 
+// a pozostałe kolory mają zostać zapisane w tablicy others.
+
 const colors = [
   'red',
   'green',
@@ -6,7 +12,17 @@ const colors = [
   'black',
   'purple',
 ];
+
+// rozwiązanie1:
+const [first, second, third, ...others] = colors;
+
+// rozwiązanie2:
 const [first, second, third] = colors; const [,,, ...others] = colors;
 
+//sprawedzenie:
 console.log('new colors', colors);
 console.log('others', others);
+
+// pytania:
+// 1. Dlaczego other ma w sobie tylko piersze trzy el pierwotnej tablicy colors?
+// 2. Dlaczego tablica colors jest identyczna z pierwotną=nie została zmieniona?
