@@ -4,6 +4,8 @@
 // o nazwach: first, second i third, 
 // a pozostałe kolory mają zostać zapisane w tablicy others.
 
+// https://codepen.io/pen/
+
 const colors = [
   'red',
   'green',
