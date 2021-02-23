@@ -6,15 +6,17 @@ import OrderSummary from '../OrderSummary/OrderSummary';
 import OrderOption from '../OrderOption/OrderOption';
 import pricing from '../../../data/pricing.json';
 
-const OrderForm = ({tripCost, options }) => (
+const OrderForm = ({tripCost, options, setOrderOption }) => (
   <Grid>
-    {/* {console.log('props', tripCost)} */}
+    {console.log('props', options)}
     <Row>
       {pricing.map((option) => (
         <Col md={4} key={option.id}>
           <OrderOption 
-            name={option.name}
-            type={option.type}
+            title={option.id}
+            setOrderOption={setOrderOption}
+            currentValue={options[option.id]}
+            {...option}
           />
         </Col>
       ))}
@@ -28,6 +30,8 @@ const OrderForm = ({tripCost, options }) => (
 OrderForm.propTypes = {
   tripCost: PropTypes.string,
   options: PropTypes.object,
+  otherProps: PropTypes.object,
+  setOrderOption: PropTypes.func,
 };
   
 export default OrderForm;
